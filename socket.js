@@ -16,6 +16,8 @@ export default function socketModule(server) {
     cors: {
       origin: "*:*",
       methods: ["GET", "POST"],
+      allowedHeaders: ["Content-Type"],
+      credentials: true
     },
   });
 
