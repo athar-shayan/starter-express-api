@@ -13,6 +13,7 @@ cloudinary.config({
 let users = {};
 export default function socketModule(server) {
   const io = new Server(server, {
+    path: "./socket",
     cors: {
       origin: ["https://misty-lion-sweatpants.cyclic.cloud/", "https://chat-app-frontend-zeta.vercel.app/chat/"],
       methods: ["GET", "POST"],
