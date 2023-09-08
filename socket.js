@@ -13,7 +13,6 @@ cloudinary.config({
 let users = {};
 export default function socketModule(server) {
   const io = new Server(server, {
-    path: "./socket",
     cors: {
       origin: "*:*",
       methods: ["GET", "POST"],
