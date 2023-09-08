@@ -20,6 +20,7 @@ export default function socketModule(server) {
 
   io.on("connection", (socket) => {
     socket.on("userJoined", ({ user }) => {
+      console.log("user has joined with ", socket.id);
       users[user] = socket.id;
       updateSocketId(user, socket.id); // Update user socket id
     });
@@ -34,10 +35,12 @@ export default function socketModule(server) {
         receiverName,
       }) => {
         try {
+          console.log("receive message from frontend");
           newMessage(messageToSend, type, senderId, conversationId);
           // Emit the message to receiver and sender
           socket.to(users[receiverName]).emit("receiverMessage");
           socket.emit("senderMessage");
+          console.log("message sent to frontend");
         } catch (error) {
           console.error("Error handling text message:", error);
         }
