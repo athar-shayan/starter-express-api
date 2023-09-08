@@ -24,6 +24,8 @@ const port =  PORT;
 const server = createServer(app);
 socketio(server);
 
+console.log("In server");
+
 // database connection
 mongoose
   .connect(MONGO_DB, {
