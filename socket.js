@@ -14,7 +14,7 @@ let users = {};
 export default function socketModule(server) {
   const io = new Server(server, {
     cors: {
-      origin: "*",
+      origin: "https://misty-lion-sweatpants.cyclic.cloud/",
     },
   });
 
