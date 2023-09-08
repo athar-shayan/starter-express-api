@@ -14,7 +14,8 @@ let users = {};
 export default function socketModule(server) {
   const io = new Server(server, {
     cors: {
-      origin: "https://misty-lion-sweatpants.cyclic.cloud/",
+      origin: ["https://misty-lion-sweatpants.cyclic.cloud/", "https://chat-app-frontend-zeta.vercel.app/"],
+      methods: ["GET", "POST"],
     },
   });
 
